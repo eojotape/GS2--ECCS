@@ -9,6 +9,7 @@ Este é um projeto de um pedômetro que utiliza o sensor MP5060 para medir passo
 ## Componentes Utilizados
 
 - Microcontrolador: ESP32
+- Cabos jumpers : Conectores
 - Sensor de passos: MP5060
 - Display LCD: I2C
 - Potenciômetro: Controle de brilho do LCD
