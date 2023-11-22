@@ -61,6 +61,10 @@ void setup() {
   pinMode(potPin, INPUT);  // Configuração do pino do potenciômetro
 }
 
+char bufferJson[100];
+
+float tempoEnvio=0;
+
 void loop() {
 mpu.getAcceleration(&ax, &ay, &az);  // Alteração aqui para passar os endereços das variáveis
 
@@ -83,6 +87,20 @@ mpu.getAcceleration(&ax, &ay, &az);  // Alteração aqui para passar os endereç
   azAnt = az;
 
   delay(100);  // Atraso para estabilização
+  float tempo = millis()/1000;
+  if (tempo - tempoEnvio>=3){
+  StaticJsonDocument<300> documentoJson;
+  documentoJson["variable"] = "passos";
+  documentoJson["value"] = passos;
+  serializeJson(documentoJson, bufferJson);
+  Serial.println(bufferJson);
+  client.publish("", bufferJson);
+  client.loop();
+  tempoEnvio= millis()/1000;
+  }
+
+
+
 }
 
 // Função para detectar um passo
