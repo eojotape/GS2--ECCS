@@ -52,3 +52,5 @@ Se encontrar problemas ou tiver sugestões para melhorias, sinta-se à vontade p
 ---
 
 Esperamos que este README ajude na implementação do seu projeto! Se precisar de mais assistência, sinta-se à vontade para entrar em contato.
+
+link para acesso do projeto no Wokwi: https://wokwi.com/projects/382012787303275521
